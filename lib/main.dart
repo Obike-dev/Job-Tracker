@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:job_tracker/app_features/auth/views/authenticate_user.dart';
+import 'package:job_tracker/app_features/auth/views/welcome.dart';
+import 'package:job_tracker/utils/reusable_widgets/background_screen.dart';
 import 'package:job_tracker/utils/theme/app_theme.dart';
 
 void main() {
   runApp(
-    ProviderScope(
+    const ProviderScope(
       child: JobTracker(),
     ),
   );
@@ -18,17 +20,15 @@ class JobTracker extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AuthenticateUserPage(
-        authType: "Hey",
-      ),
+      home: const WelcomPage(),
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
           brightness: Brightness.light,
           primary: AppTheme.primary,
-          surface: AppTheme.backgroundColor,
+          surface: AppTheme.background,
           secondary: AppTheme.secondary,
-          seedColor: AppTheme.primary,
+          seedColor: AppTheme.seed,
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: AppTheme.elevatedButtonTheme(),

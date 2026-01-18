@@ -12,7 +12,7 @@ class WelcomPage extends ConsumerStatefulWidget {
 class WelcomPageState extends ConsumerState<WelcomPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       // body: BackgroundScreen(),
       body: BackgroundScreen(),
     );
